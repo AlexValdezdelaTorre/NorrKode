@@ -1,0 +1,377 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0A0908;
+  color: #fff;
+  line-height: 1.6;
+}
+
+@font-face {
+  font-family: 'RuneFont';
+  src: url('../assets/fonts/RUNE.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#fondoAnimado {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: block;
+  pointer-events: none;
+}
+
+
+
+/* Header */
+/* .contenedor-header {
+  background: rgba(10, 9, 8, 0.95);
+  color: #fff;
+  max-height: 250px;
+  padding: 0.1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #34E5FF;
+  flex-wrap: wrap;
+  margin: 0 150px 0 150px;
+}
+ */
+
+ .contenedor-header {
+  background: rgba(10, 9, 8, 0.95);
+  color: #fff;
+  max-height: 250px;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #34E5FF;
+  flex-wrap: wrap;
+  margin: 0 150px 0 150px;
+}
+
+/* Logo respeta su tamaño original */
+.logo {
+  position: relative;      
+  bottom: 20px; 
+  width: 400px;
+  height: auto;
+}
+
+/* .logo-area {
+  position: relative;      
+  bottom: 10px;             
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+ */
+
+ .logo-area {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Eslogan con estilo original */
+
+/* .eslogan {
+  font-size: 1rem;
+  color: #D1BCE3;
+  font-style: italic;
+  letter-spacing: 1px;
+   position: relative;     
+  bottom: 100px;             
+} */
+
+.eslogan {
+  font-size: 1rem;
+  color: #D1BCE3;
+  font-style: italic;
+  letter-spacing: 1px;
+  margin-top: 0.5rem;
+  position: relative;
+   bottom: 100px;
+}
+
+.eslogan .runa {
+  font-family: 'Runefont', serif; /* aquí puedes usar la fuente runa si ya la tienes */
+  font-size: 1.8rem;
+  color: #34E5FF;
+  margin: 0 0.3rem;
+}
+
+/* Menú */
+/* .menu-container a {
+  color: #34E5FF;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+ */
+
+ .menu-container {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu-container a {
+  color: #34E5FF;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.menu-container a:hover {
+  color: #D1BCE3;
+}
+
+/* BOTÓN HAMBURGUESA (móvil) */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #34E5FF;
+}
+
+
+/* Hero */
+.hero {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0A0908 70%, #573280 100%);
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #34E5FF;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: #D1BCE3;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-principal {
+  padding: 0.8rem 1.8rem;
+  background: #007EA7;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+  background: #34E5FF;
+  color: #0A0908;
+  transform: scale(1.05);
+}
+
+/* Portafolio */
+.portafolio {
+  background: #0A0908;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.portafolio h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #34E5FF;
+}
+
+.grid-portafolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.proyecto {
+  background: #573280;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #fff;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.proyecto:hover {
+  transform: translateY(-8px);
+  background: #007EA7;
+}
+
+/* Servicios */
+.servicios {
+  background: #111;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.servicios h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #6b2faf;
+}
+
+.grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.servicio {
+  background: #007EA7;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #fff;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.servicio:hover {
+  transform: translateY(-8px);
+  background: #573280;
+}
+
+/* Contacto */
+.contacto {
+  background: #0A0908;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.contacto h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #34E5FF;
+}
+
+.form-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: #111;
+  color: #fff;
+}
+
+.form-contacto button {
+  align-self: center;
+}
+
+/* Footer */
+.footer {
+  background: #111;
+  color: #D1BCE3;
+  text-align: center;
+  padding: 1rem;
+  border-top: 2px solid #34E5FF;
+}
+
+/* =====================
+   Media Queries Responsive
+===================== */
+
+
+/* TABLETS */
+@media (max-width: 1024px) {
+  .contenedor-header {
+    margin: 0 50px; /* Reducir márgenes */
+  }
+
+  .logo {
+    bottom: 15px;  /* Ajuste menor */
+    width: 300px;
+  }
+
+  .eslogan {
+    bottom: 60px;  /* Separación adecuada del borde azul */
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+/* SMARTPHONES GRANDES */
+@media (max-width: 768px) {
+  .contenedor-header {
+    margin: 0 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    bottom: 10px;
+    width: 250px;
+  }
+
+  .eslogan {
+    bottom: 0;           /* Eliminamos bottom para móviles */
+    margin-top: 0.5rem;  /* Usamos margen para separar del logo */
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .menu-container {
+    width: 100%;
+    display: none;      /* menú hamburguesa */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0.5rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* SMARTPHONES PEQUEÑOS */
+@media (max-width: 480px) {
+  .logo {
+    width: 200px;
+  }
+
+  .eslogan {
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+  }
+
+  .menu-container a {
+    font-size: 0.9rem;
+  }
+}

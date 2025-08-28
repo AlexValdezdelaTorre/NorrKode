@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia marketing</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agencia Digital - Programamos tu éxito</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <!-- <header class="contenedor-header">
+    <div class="logo-area">
+      <img class="logo" src="assets/img/runas.png" alt="Logo">
+      <p class="eslogan">
+        <span class=""></span> Programamos tu éxito 
+        <span class="runa">AJ</span> Diseñamos tu esencia  -->
+        <!-- <span class=""></span> -->
+      <!-- </p>
+    </div>
+    
+    <nav class="menu-container">
+      <a href="#inicio">Inicio</a>
+      <a href="#portafolio">Portafolio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header> -->
+
+  <header class="contenedor-header">
+  <div class="logo-area">
+    <img class="logo" src="assets/img/runas.png" alt="Logo">
+    <p class="eslogan">Programamos tu éxito <span class="runa">AJ</span> diseñamos tu esencia</p>
+  </div>
+
+  <!-- Botón hamburguesa -->
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav class="menu-container">
+    <a href="#hero">Inicio</a>
+    <a href="#portafolio">Portafolio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+  <!-- Fondo animado -->
+  <canvas id="fondoAnimado"></canvas>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="hero">
+    <div class="hero-contenido">
+      <h1>Impulsa tu marca al siguiente nivel</h1>
+      <p>Desarrollo web, branding y soluciones digitales a la medida.</p>
+      <a href="#contacto" class="btn-principal">Hablemos</a>
+    </div>
+  </section>
+
+  <!-- Portafolio -->
+  <section id="portafolio" class="portafolio">
+    <h2>Nuestro Portafolio</h2>
+    <div class="grid-portafolio">
+      <div class="proyecto">Proyecto 1</div>
+      <div class="proyecto">Proyecto 2</div>
+      <div class="proyecto">Proyecto 3</div>
+      <div class="proyecto">Proyecto 4</div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="servicios">
+    <h2>Lo que hacemos</h2>
+    <div class="grid-servicios">
+      <div class="servicio">
+        <h3>Desarrollo Web</h3>
+        <p>Diseños modernos y funcionales que se adaptan a tu marca.</p>
+      </div>
+      <div class="servicio">
+        <h3>Branding</h3>
+        <p>Creamos identidades únicas que transmiten la esencia de tu negocio.</p>
+      </div>
+      <div class="servicio">
+        <h3>Marketing Digital</h3>
+        <p>Estrategias efectivas para llegar a tu público ideal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contáctanos</h2>
+    <form class="form-contacto">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea placeholder="Tu mensaje" required></textarea>
+      <button type="submit" class="btn-principal">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 Agencia Digital - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="app.js"></script>
+</body>
+</html>
+
+</html>
