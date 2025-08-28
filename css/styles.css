@@ -30,27 +30,7 @@ body {
   pointer-events: none;
 }
 
-
-
-/* Header */
-/* .contenedor-header {
-  background: rgba(10, 9, 8, 0.95);
-  color: #fff;
-  max-height: 250px;
-  padding: 0.1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 2px solid #34E5FF;
-  flex-wrap: wrap;
-  margin: 0 150px 0 150px;
-}
- */
-
- .contenedor-header {
+.contenedor-header {
   background: rgba(10, 9, 8, 0.95);
   color: #fff;
   max-height: 250px;
@@ -63,25 +43,13 @@ body {
   z-index: 1000;
   border-bottom: 2px solid #34E5FF;
   flex-wrap: wrap;
-  margin: 0 150px 0 150px;
+ 
 }
 
-/* Logo respeta su tamaño original */
 .logo {
-  position: relative;      
-  bottom: 20px; 
   width: 400px;
   height: auto;
 }
-
-/* .logo-area {
-  position: relative;      
-  bottom: 10px;             
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
- */
 
  .logo-area {
   display: flex;
@@ -90,17 +58,6 @@ body {
   position: relative;
 }
 
-/* Eslogan con estilo original */
-
-/* .eslogan {
-  font-size: 1rem;
-  color: #D1BCE3;
-  font-style: italic;
-  letter-spacing: 1px;
-   position: relative;     
-  bottom: 100px;             
-} */
-
 .eslogan {
   font-size: 1rem;
   color: #D1BCE3;
@@ -108,27 +65,17 @@ body {
   letter-spacing: 1px;
   margin-top: 0.5rem;
   position: relative;
-   bottom: 100px;
+  bottom: 100px;
 }
 
 .eslogan .runa {
-  font-family: 'Runefont', serif; /* aquí puedes usar la fuente runa si ya la tienes */
+  font-family: 'RuneFont', serif; 
   font-size: 1.8rem;
   color: #34E5FF;
   margin: 0 0.3rem;
 }
 
-/* Menú */
-/* .menu-container a {
-  color: #34E5FF;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-weight: 500;
-  transition: 0.3s ease;
-}
- */
-
- .menu-container {
+.menu-container {
   display: flex;
   gap: 1.5rem;
 }
@@ -144,16 +91,6 @@ body {
   color: #D1BCE3;
 }
 
-/* BOTÓN HAMBURGUESA (móvil) */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #34E5FF;
-}
-
-
-/* Hero */
 .hero {
   height: 70vh;
   display: flex;
@@ -195,6 +132,7 @@ body {
   color: #0A0908;
   transform: scale(1.05);
 }
+
 
 /* Portafolio */
 .portafolio {
@@ -308,8 +246,11 @@ body {
    Media Queries Responsive
 ===================== */
 
+@media (min-width: 1025px){
+  .contenedor-header { margin: 0 150px; }
+}
 
-/* TABLETS */
+
 @media (max-width: 1024px) {
   .contenedor-header {
     margin: 0 50px; /* Reducir márgenes */
@@ -327,51 +268,111 @@ body {
   }
 }
 
-/* SMARTPHONES GRANDES */
 @media (max-width: 768px) {
+  html, body { 
+    max-width: 100%; overflow-x: hidden; 
+  }
+
   .contenedor-header {
-    margin: 0 20px;
+    margin: 0 12px;                 
+    padding: .5rem .75rem;          
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 14px;            
+  }
+
+  .logo-area {
+    flex: 1 1 100%;
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   .logo {
-    bottom: 10px;
-    width: 250px;
+    width: clamp(160px, 45vw, 260px);
+    height: auto;
+    bottom: 0;
+    margin: 0 auto;
+    display: block;
   }
 
   .eslogan {
-    bottom: 0;           /* Eliminamos bottom para móviles */
-    margin-top: 0.5rem;  /* Usamos margen para separar del logo */
+    position: static !important;    
+    bottom: 0 !important;
+    margin-top: 12px;               
     text-align: center;
-    font-size: 0.9rem;
+    font-size: .95rem;
   }
 
   .menu-container {
-    width: 100%;
-    display: none;      /* menú hamburguesa */
-    flex-direction: column;
-    align-items: center;
-    margin-top: 0.5rem;
+    flex: 1 1 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .menu-container a { 
+    white-space: nowrap; font-size: .95rem; 
   }
 
-  .menu-toggle {
-    display: block;
-  }
+  .hero { padding: 1.5rem 1rem; }
+  .hero h1 { font-size: clamp(1.8rem, 9vw, 2.6rem); line-height: 1.15; }
+  .hero p  { font-size: clamp(.95rem, 3.6vw, 1.1rem); }
 }
 
+
 /* SMARTPHONES PEQUEÑOS */
+
 @media (max-width: 480px) {
-  .logo {
-    width: 200px;
+  .contenedor-header{
+    margin: 0 8px;
+    padding: .5rem .6rem;
+    flex-wrap: wrap;
+    gap: .4rem;
+    margin-bottom: 16px;        
+  }
+  
+  .logo-area{
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .eslogan {
-    font-size: 0.85rem;
-    margin-top: 0.3rem;
+  .logo{
+    width: clamp(150px, 50vw, 200px);
+    height: auto;
+    bottom: 0;                  
+    margin: 0 auto;
+    display: block;
   }
 
-  .menu-container a {
-    font-size: 0.9rem;
+  .eslogan{
+    position: static !important; 
+    bottom: auto !important;
+    font-size: .9rem;            
+    line-height: 1.3;
+    margin-top: 12px;            
+    text-align: center;
   }
+
+  .eslogan .runa{
+    font-family: 'RuneFont', serif;
+    font-size: 1.2rem;           
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .menu-container{
+    flex: 1 1 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: .75rem;
+  }
+
+  .menu-container a{
+    font-size: .9rem;
+    white-space: nowrap;
+  }
+
+  html, body{ max-width:100%; overflow-x:hidden; }
 }
