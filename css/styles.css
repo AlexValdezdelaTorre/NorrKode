@@ -1,5 +1,7 @@
 
 /* Reset */
+
+
 * {
   margin: 0;
   padding: 0;
@@ -234,13 +236,63 @@ body {
 }
 
 /* Footer */
-.footer {
+/* .footer {
   background: #111;
   color: #D1BCE3;
   text-align: center;
   padding: 1rem;
   border-top: 2px solid #34E5FF;
+} */
+
+.footer {
+  background: #0a0908;
+  padding: 2rem 1rem;
+  text-align: center;
+
+  /* 👇 la línea azul como antes */
+  border-top: 2px solid #2bb1ff;
+
+  margin-top: 2rem; /* para que no quede pegado al botón de enviar */
 }
+
+.footer-text {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #e7ecf3;
+}
+
+.redes {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.redes a {
+  color: var(--nk-blue, #2bb1ff);
+  font-size: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.redes a:hover {
+  color: var(--nk-purple, #7b3cff);
+  transform: scale(1.3) rotate(-5deg);
+  text-shadow: 0 0 10px rgba(43,177,255,0.7),
+               0 0 20px rgba(123,60,255,0.6);
+}
+
+.copy {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.65);
+  text-align: center;
+}
+.copy .brand {
+  background: linear-gradient(90deg, #2bb1ff, #7b3cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
 
 /* =====================
    Media Queries Responsive
@@ -376,3 +428,4 @@ body {
 
   html, body{ max-width:100%; overflow-x:hidden; }
 }
+

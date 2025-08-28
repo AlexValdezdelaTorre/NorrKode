@@ -73,6 +73,48 @@ function dibujar() {
 
 dibujar();
 
+(function () {
+  const header = document.querySelector('.contenedor-header');
+  const links = document.querySelectorAll('.menu-container a[href^="#"]');
+
+  if (!header || !links.length) return;
+
+  const getOffset = () => (header.offsetHeight || 0) + 12;
+  
+  const extraById = {
+  '#portafolio': 60,  // sube/baja este número a tu gusto (40–80)
+  '#servicios': 60
+};
+
+  function scrollWithOffset(hash, push = true) {
+    const el = document.querySelector(hash);
+    if (!el) return;
+    const extra = (hash === '#portafolio' || hash === '#servicios') ? 60 : 0;
+
+const y = el.getBoundingClientRect().top + window.scrollY - (getOffset() + extra);
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    if (push) history.pushState(null, '', hash);
+  }
+
+  // Clicks del menú
+  links.forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      scrollWithOffset(a.getAttribute('href'));
+    });
+  });
+
+  // Si entras con #hash (o recargas con hash), corrige posición
+  window.addEventListener('load', () => {
+    if (location.hash) {
+      // esperar a que todo se pinte (header + fuentes + layout)
+      setTimeout(() => scrollWithOffset(location.hash, false), 0);
+    }
+  });
+})();
+
+
+
 
 
  

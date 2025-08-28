@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <title>NorrKode</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -65,19 +67,56 @@
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="contacto">
-    <h2>Contáctanos</h2>
-    <form class="form-contacto">
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu correo" required>
-      <textarea placeholder="Tu mensaje" required></textarea>
-      <button type="submit" class="btn-principal">Enviar</button>
-    </form>
-  </section>
+<section id="contacto" class="contacto">
+  <h2>Contáctanos</h2>
+
+<form class="form-contacto"
+      action="https://formsubmit.co/norrkode@gmail.com"
+      method="POST">
+
+  <!-- Campos con "name" para que se envíen correctamente -->
+  <input type="text"  name="name"  placeholder="Tu nombre"  required>
+  <input type="email" name="email" placeholder="Tu correo"  required>
+  <textarea name="message" placeholder="Tu mensaje" required></textarea>
+
+  <!-- Asunto del correo que te llegará -->
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde tu web">
+
+  <!-- URL de gracias: cambia la ruta según dónde tengas el archivo -->
+  <input type="hidden" name="_next" value="https://noorkode.netlify.app/gracias.html">
+
+  <!-- Anti-spam (honeypot) -->
+  <input type="text" name="_honey" style="display:none">
+
+  <!-- Opcional: desactivar captcha si no lo quieres -->
+  <!-- <input type="hidden" name="_captcha" value="false"> -->
+
+  <button type="submit" class="btn-principal">Enviar</button>
+</form>
+
+
 
   <!-- Footer -->
   <footer class="footer">
-    <p>© 2025 Agencia Digital - Todos los derechos reservados</p>
+
+    <p class="footer-text">Síguenos en redes</p>
+  <div class="redes">
+    <a href="https://facebook.com/norrkode" target="_blank" aria-label="Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com/norrkode" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://wa.me/521XXXXXXXXXX" target="_blank" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+
+    <!-- <p>© 2025 NoorKode - Agencia Creativa y Tecnológica - Todos los derechos reservados</p> -->
+     <p class="copy">
+  © 2025 <span class="brand">NorrKode</span> · Agencia Creativa y Tecnológica · Todos los derechos reservados
+</p>
+
   </footer>
 
   <!-- JS -->
