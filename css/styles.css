@@ -447,7 +447,7 @@ body {
 }
 
 /* Móviles en vertical */
-@media (max-width: 430px) and (orientation: portrait) {
+/* @media (max-width: 430px) and (orientation: portrait) {
   .contenedor-header { 
     padding-bottom: 14px; 
   }
@@ -460,4 +460,23 @@ body {
 @supports (-webkit-touch-callout: none) {
   .contenedor-header { padding-bottom: 16px; }
 }
+ */
 
+ /* Móviles en vertical */
+@media (max-width: 430px) and (orientation: portrait) {
+  .eslogan {
+    display: inline-block;  
+    line-height: 1.4;       
+    margin-bottom: 8px;     
+  }
+  
+  .contenedor-header {
+    padding-bottom: 0; 
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .eslogan {
+    margin-bottom: 10px; 
+  }
+}
