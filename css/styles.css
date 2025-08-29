@@ -462,21 +462,20 @@ body {
 }
  */
 
- /* Móviles en vertical */
+/* Móviles en vertical */
 @media (max-width: 430px) and (orientation: portrait) {
   .eslogan {
-    display: inline-block;  
-    line-height: 1.4;       
-    margin-bottom: 8px;     
+    display: block;
+    margin-bottom: 14px; 
+    line-height: 1.4;
   }
-  
-  .contenedor-header {
+
+  .contenedor-header { 
     padding-bottom: 0; 
   }
 }
 
+
 @supports (-webkit-touch-callout: none) {
-  .eslogan {
-    margin-bottom: 10px; 
-  }
+  .eslogan { margin-bottom: 16px; }
 }
