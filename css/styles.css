@@ -64,10 +64,10 @@ body {
   font-size: 1rem;
   color: #D1BCE3;
   font-style: italic;
-  letter-spacing: 1px;
+  letter-spacing: .8px;
   margin-top: 0.5rem;
   position: relative;
-  bottom: 100px;
+  bottom: 120px;
 }
 
 .eslogan .runa {
@@ -347,7 +347,8 @@ body {
     padding: .5rem .75rem;          
     flex-wrap: wrap;
     gap: .5rem;
-    margin-bottom: 14px;            
+    margin-bottom: 14px;  
+    max-height: 200px;          
   }
 
   .logo-area {
@@ -368,7 +369,7 @@ body {
   .eslogan {
     position: static !important;    
     bottom: 0 !important;
-    margin-top: 12px;               
+    /* margin-top: 0 auto; */               
     text-align: center;
     font-size: .95rem;
   }
@@ -378,7 +379,9 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
+    margin-top: 20px;
   }
+
   .menu-container a { 
     white-space: nowrap; font-size: .95rem; 
   }
@@ -397,7 +400,8 @@ body {
     padding: .5rem .6rem;
     flex-wrap: wrap;
     gap: .4rem;
-    margin-bottom: 16px;        
+    margin-bottom: 16px;  
+    max-height: 170px;      
   }
   
   .logo-area{
@@ -465,31 +469,37 @@ body {
  /* Mobile portrait: ajusta SOLO el eslogan */
 @media (max-width: 430px) and (orientation: portrait) {
   .eslogan{
-    display: inline-block;   /* evita colapso de margen */
-    line-height: 1.35;       /* un poquito más de aire */
-    margin-bottom: 0;        /* NO márgenes, para que no colapse */
-    padding-bottom: 10px;    /* separa el texto de la línea */
-    transform: translateZ(0);/* evita redondeos en iOS */
+    display: inline-block;   
+    line-height: 1.35;      
+    margin-bottom: 0;        
+    padding-bottom: 10px;    
+    transform: translateZ(0);
   }
   .contenedor-header{
-    padding-bottom: 0;       /* quita el truco previo */
+    padding-bottom: 0;       
   }
 }
 
-/* Afinado específico para Safari iOS */
+
 @supports (-webkit-touch-callout: none) {
   .eslogan{
-    padding-bottom: 12px;    /* +2px solo en iOS */
+    padding-bottom: 12px;    
   }
 }
 
-/* (Opcional pero muy útil) Evita colapso en el contenedor */
 @supports (-webkit-touch-callout: none) {
   .logo-area,
   .contenedor-header{
-    display: flow-root;      /* o overflow:hidden; si prefieres */
+    display: flow-root;    
   }
 }
+
+@media (max-width: 380px) {
+  .contenedor-header{
+    max-height: 160px;
+  }
+}
+
 
 
 

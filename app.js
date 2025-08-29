@@ -72,7 +72,7 @@ function dibujar() {
 }
 
 dibujar();
-
+/* 
 (function () {
   const header = document.querySelector('.contenedor-header');
   const links = document.querySelectorAll('.menu-container a[href^="#"]');
@@ -110,7 +110,7 @@ const y = el.getBoundingClientRect().top + window.scrollY - (getOffset() + extra
       setTimeout(() => scrollWithOffset(location.hash, false), 0);
     }
   });
-})();
+})(); */
 
 
 
