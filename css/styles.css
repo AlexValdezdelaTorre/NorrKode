@@ -447,9 +447,9 @@ body {
 }
 
 /* Móviles en vertical */
-@media (max-width: 290px) and (orientation: portrait) {
+/* @media (max-width: 430px) and (orientation: portrait) {
   .contenedor-header { 
-    padding-bottom: 16px; 
+    padding-bottom: 14px; 
   }
   .eslogan{
     line-height: 1.5;     
@@ -459,7 +459,36 @@ body {
 
 @supports (-webkit-touch-callout: none) {
   .contenedor-header { padding-bottom: 16px; }
-  .eslogan { margin-bottom: 2px; } /* suma +2px a lo que ya quedó por media query */
+}
+ */
+
+ /* Mobile portrait: ajusta SOLO el eslogan */
+@media (max-width: 430px) and (orientation: portrait) {
+  .eslogan{
+    display: inline-block;   /* evita colapso de margen */
+    line-height: 1.35;       /* un poquito más de aire */
+    margin-bottom: 0;        /* NO márgenes, para que no colapse */
+    padding-bottom: 10px;    /* separa el texto de la línea */
+    transform: translateZ(0);/* evita redondeos en iOS */
+  }
+  .contenedor-header{
+    padding-bottom: 0;       /* quita el truco previo */
+  }
+}
+
+/* Afinado específico para Safari iOS */
+@supports (-webkit-touch-callout: none) {
+  .eslogan{
+    padding-bottom: 12px;    /* +2px solo en iOS */
+  }
+}
+
+/* (Opcional pero muy útil) Evita colapso en el contenedor */
+@supports (-webkit-touch-callout: none) {
+  .logo-area,
+  .contenedor-header{
+    display: flow-root;      /* o overflow:hidden; si prefieres */
+  }
 }
 
 
