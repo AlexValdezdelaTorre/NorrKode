@@ -447,7 +447,7 @@ body {
 }
 
 /* Móviles en vertical */
-/* @media (max-width: 430px) and (orientation: portrait) {
+@media (max-width: 390px) and (orientation: portrait) {
   .contenedor-header { 
     padding-bottom: 14px; 
   }
@@ -460,35 +460,6 @@ body {
 @supports (-webkit-touch-callout: none) {
   .contenedor-header { padding-bottom: 16px; }
 }
- */
 
-/* Móviles en vertical */
 
-/* iPhone Plus/Max antiguos y medianos (414) */
-@media (max-width: 414px) {
-  .eslogan { 
-    display: inline-block;
-    line-height: 1.45;
-    margin-bottom: 10px;   /* aire entre texto y línea */
-  }
-}
 
-/* iPhone 12/13/14/15 (390) */
-@media (max-width: 390px) {
-  .eslogan { margin-bottom: 12px; }
-}
-
-/* iPhone 6/7/8/SE/11 Pro/12 mini… (375) */
-@media (max-width: 375px) {
-  .eslogan { margin-bottom: 14px; }
-}
-
-/* Androids pequeños / iPhone SE viejito (360) */
-@media (max-width: 360px) {
-  .eslogan { margin-bottom: 16px; }
-}
-
-/* Hint específico que Safari iOS entiende (afinamos un pelito más) */
-@supports (-webkit-touch-callout: none) {
-  .eslogan { margin-bottom: 2px; } /* suma +2px a lo que ya quedó por media query */
-}
