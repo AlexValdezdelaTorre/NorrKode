@@ -25,7 +25,7 @@ function initRunas() {
       y: Math.random() * -canvas.height,
       velocidad: 1 + Math.random() * 3,
       simbolo: runas[Math.floor(Math.random() * runas.length)],
-      tamaño: (20 + Math.random() * 20) * factor, // tamaño proporcional
+      tamaño: (20 + Math.random() * 20) * factor, 
       alpha: 0.6 + Math.random() * 0.4,
       oscilacion: Math.random() * 50,
       fase: Math.random() * Math.PI * 2
@@ -82,7 +82,7 @@ dibujar();
   const getOffset = () => (header.offsetHeight || 0) + 12;
   
   const extraById = {
-  '#portafolio': 60,  // sube/baja este número a tu gusto (40–80)
+  '#portafolio': 60,  
   '#servicios': 60
 };
 
@@ -104,14 +104,14 @@ const y = el.getBoundingClientRect().top + window.scrollY - (getOffset() + extra
     });
   });
 
-  // Si entras con #hash (o recargas con hash), corrige posición
+  
   window.addEventListener('load', () => {
     if (location.hash) {
-      // esperar a que todo se pinte (header + fuentes + layout)
       setTimeout(() => scrollWithOffset(location.hash, false), 0);
     }
   });
 })();
+
 
 
 

@@ -73,6 +73,7 @@ body {
 .eslogan .runa {
   font-family: 'RuneFont', serif; 
   font-size: 1.8rem;
+  font-style: normal;
   color: #34E5FF;
   margin: 0 0.3rem;
 }
@@ -291,6 +292,22 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+}
+
+/* Botón */
+.btn-principal {
+  background: #34E5FF;
+  color: #0A0908;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-principal:hover {
+  background: #2CCBDE;
 }
 
 

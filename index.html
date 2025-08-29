@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
   <title>NorrKode</title>
   <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
 
   <header class="contenedor-header">
-  <div class="logo-area">
-    <img class="logo" src="assets/img/runas.png" alt="Logo">
-    <p class="eslogan">Programamos tu éxito <span class="runa">AJ</span> Diseñamos tu esencia</p>
-  </div>
+      <div class="logo-area">
+        <img class="logo" src="assets/img/runas.png" alt="Logo">
+        <p class="eslogan">Programamos tu éxito <span class="runa">AJ</span> Diseñamos tu esencia</p>
+      </div>
 
-  <nav class="menu-container">
-    <a href="#inicio">Inicio</a>
-    <a href="#portafolio">Portafolio</a>
-    <a href="#servicios">Servicios</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-</header>
+      <nav class="menu-container">
+        <a href="#inicio">Inicio</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+  </header>
 
   <!-- Fondo animado -->
   <canvas id="fondoAnimado"></canvas>
@@ -53,46 +53,39 @@
     <div class="grid-servicios">
       <div class="servicio">
         <h3>Desarrollo Web</h3>
-        <p>Diseños modernos y funcionales que se adaptan a tu marca.</p>
+        <p>Creamos sitios modernos, funcionales y estratégicos, diseñados para reflejar la esencia de tu marca y potenciar tu presencia digital.</p>
       </div>
       <div class="servicio">
         <h3>Branding</h3>
-        <p>Creamos identidades únicas que transmiten la esencia de tu negocio.</p>
+        <p>Desarrollamos identidades sólidas y memorables que comunican la esencia de tu marca y generan confianza en tus clientes.</p>
       </div>
       <div class="servicio">
         <h3>Marketing Digital</h3>
-        <p>Estrategias efectivas para llegar a tu público ideal.</p>
+        <p>Creamos planes integrales de marketing digital enfocados en tu negocio: desde redes sociales y publicidad online hasta contenido estratégico, para llegar a tu público ideal y generar un crecimiento sostenible.</p>
       </div>
     </div>
   </section>
 
   <!-- Contacto -->
-<section id="contacto" class="contacto">
-  <h2>Contáctanos</h2>
+  <section id="contacto" class="contacto">
+    <h2>Contáctanos</h2>
 
-<form class="form-contacto"
-      action="https://formsubmit.co/norrkode@gmail.com"
-      method="POST">
+  <form class="form-contacto"
+    action="https://formsubmit.co/norrkode@gmail.com"
+    method="POST">
 
-  <!-- Campos con "name" para que se envíen correctamente -->
-  <input type="text"  name="name"  placeholder="Tu nombre"  required>
-  <input type="email" name="email" placeholder="Tu correo"  required>
-  <textarea name="message" placeholder="Tu mensaje" required></textarea>
+    <input type="text"  name="name"  placeholder="Tu nombre"  required>
+    <input type="email" name="email" placeholder="Tu correo"  required>
+    <textarea name="message" placeholder="Tu mensaje" required></textarea>
 
-  <!-- Asunto del correo que te llegará -->
-  <input type="hidden" name="_subject" value="Nuevo mensaje desde tu web">
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde tu web">
 
-  <!-- URL de gracias: cambia la ruta según dónde tengas el archivo -->
-  <input type="hidden" name="_next" value="https://noorkode.netlify.app/gracias.html">
+    <input type="hidden" name="_next" value="https://noorkode.netlify.app/gracias.html">
 
-  <!-- Anti-spam (honeypot) -->
-  <input type="text" name="_honey" style="display:none">
+    <input type="text" name="_honey" style="display:none">
 
-  <!-- Opcional: desactivar captcha si no lo quieres -->
-  <!-- <input type="hidden" name="_captcha" value="false"> -->
-
-  <button type="submit" class="btn-principal">Enviar</button>
-</form>
+    <button type="submit" class="btn-principal">Enviar</button>
+  </form>
 
 
 
@@ -100,26 +93,27 @@
   <footer class="footer">
 
     <p class="footer-text">Síguenos en redes</p>
-  <div class="redes">
-    <a href="https://facebook.com/norrkode" target="_blank" aria-label="Facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://instagram.com/norrkode" target="_blank" aria-label="Instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://wa.me/521XXXXXXXXXX" target="_blank" aria-label="WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div>
+    
+    <div class="redes">
+      <a href="https://facebook.com/norrkode" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/norrkode" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/521XXXXXXXXXX" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
 
-    <!-- <p>© 2025 NoorKode - Agencia Creativa y Tecnológica - Todos los derechos reservados</p> -->
-     <p class="copy">
-  © 2025 <span class="brand">NorrKode</span> · Agencia Creativa y Tecnológica · Todos los derechos reservados
-</p>
+    <p class="copy">
+          © 2025 <span class="brand">NorrKode</span> · Agencia Creativa y Tecnológica · Todos los derechos reservados
+    </p>
 
   </footer>
 
   <!-- JS -->
   <script src="app.js"></script>
+
 </body>
 </html>
