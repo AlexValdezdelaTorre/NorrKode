@@ -447,9 +447,9 @@ body {
 }
 
 /* Móviles en vertical */
-@media (max-width: 300px) and (orientation: portrait) {
+@media (max-width: 290px) and (orientation: portrait) {
   .contenedor-header { 
-    padding-bottom: 14px; 
+    padding-bottom: 16px; 
   }
   .eslogan{
     line-height: 1.5;     
@@ -459,6 +459,7 @@ body {
 
 @supports (-webkit-touch-callout: none) {
   .contenedor-header { padding-bottom: 16px; }
+  .eslogan { margin-bottom: 2px; } /* suma +2px a lo que ya quedó por media query */
 }
 
 
