@@ -447,7 +447,7 @@ body {
 }
 
 /* Móviles en vertical */
-@media (max-width: 390px) and (orientation: portrait) {
+@media (max-width: 360px) and (orientation: portrait) {
   .contenedor-header { 
     padding-bottom: 14px; 
   }
