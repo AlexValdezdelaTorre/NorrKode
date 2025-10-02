@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://norrkode.netlify.app/sitemap.xml
