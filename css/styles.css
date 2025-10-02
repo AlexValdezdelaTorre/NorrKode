@@ -8,6 +8,21 @@
   box-sizing: border-box;
 }
 
+:root { --header-h: 110px; }   /* alto de tu header fijo */
+html { scroll-behavior: smooth; }
+
+#portafolio::before,
+#servicios::before,
+#contacto::before{
+  content:"";
+  display:block;
+  height: calc(var(--header-h) + 12px);
+  margin-top: calc(-1 * (var(--header-h) + 12px));
+  visibility:hidden;
+  pointer-events:none;
+}
+
+
 body {
   font-family: 'Poppins', sans-serif;
   background: #0A0908;
@@ -138,7 +153,7 @@ body {
 
 
 /* Portafolio */
-.portafolio {
+/* .portafolio {
   background: #0A0908;
   padding: 4rem 2rem;
   text-align: center;
@@ -167,7 +182,137 @@ body {
 .proyecto:hover {
   transform: translateY(-8px);
   background: #007EA7;
+} */
+
+/* Grid: 4 columnas en desktop, 2 en tablet, 1 en móvil */
+.grid-portafolio{
+  display:grid;
+  gap:1.25rem;
+  grid-template-columns:repeat(4, minmax(220px,1fr));
+  margin: 0 30px;
 }
+
+.portafolio h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #34E5FF;   /* azul original */
+  text-align: center; /* por si se alineó raro */
+}
+
+
+/* Tarjeta compacta y más “apaisada” (rectángulo bajito) */
+.proyecto{
+  background:#573280;
+  border-radius:12px;
+  color:#fff;
+  display:flex;
+  flex-direction:column;
+  padding:0.8rem;
+  min-height: 190px;          /* más baja */
+  max-height: 210px;          /* evita que crezca */
+  overflow:hidden;
+  transition:transform .3s ease, background .3s ease;
+}
+.proyecto:hover{ transform:translateY(-6px); background:#007EA7; }
+
+/* Imagen bajita tipo banner */
+.proyecto-media img{
+  width:100%;
+  height:100px;               /* antes 160/220 → ahora bajito */
+  object-fit:cover;
+  display:block;
+  border-radius:8px;
+}
+
+/* Cuerpo compacto y centrado */
+.proyecto-body{
+  padding:.6rem .6rem .8rem;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:.45rem;
+}
+
+.proyecto h3{
+  margin:0;
+  font-size:1rem;             /* más pequeño */
+  line-height:1.2;
+  font-weight:800;
+}
+
+.proyecto-resumen{
+  margin:0;
+  font-size:.85rem;
+  line-height:1.25;
+  opacity:.95;
+  white-space:nowrap;         /* una línea… */
+  overflow:hidden;            /* …si se pasa, corta… */
+  text-overflow:ellipsis;     /* …y pone “…” */
+}
+
+/* Botón centrado y pequeño */
+.btn-ver,.btn-cta{
+  align-self:center;
+  background:#34E5FF;
+  color:#0A0908;
+  border:0; border-radius:10px;
+  padding:.45rem .8rem;
+  font-weight:800;
+  font-size:.9rem;
+  display:inline-block;
+  margin-top:.2rem;
+  transition:transform .12s ease, box-shadow .12s ease, background .2s ease;
+}
+.btn-ver:hover,.btn-cta:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 18px rgba(52,229,255,.25);
+  background:#20d6f1;
+}
+
+/* Modal con más padding (por si no lo tenías ya) */
+.modal-dialog{ padding:2rem; }
+.kpi-list li{ padding:.8rem 1rem; }
+
+/* Oculto por defecto + por encima de todo */
+.modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 10000;
+}
+.modal[aria-hidden="false"]{ display: block; }
+
+.modal-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.7);
+  backdrop-filter: blur(2px);
+}
+
+/* Caja del modal */
+.modal-dialog{
+  position: relative;
+  width: min(92vw, 760px);
+  max-height: 85vh;
+  overflow: auto;
+  margin: 6vh auto;
+  padding: 2rem;                 /* padding para que no se vea encimado */
+  background: #0A0908;
+  color: #e9eaf8;
+  border: 1px solid #2a2a35;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.65);
+}
+
+.modal-close{
+  position: absolute; top: 10px; right: 12px;
+  background: transparent; border: 0; cursor: pointer;
+  color: #34E5FF; font-size: 22px;
+}
+
+/* Bloquear scroll del documento cuando el modal está abierto */
+body.modal-open{ overflow: hidden; }
+
 
 /* Servicios */
 .servicios {
@@ -315,190 +460,154 @@ body {
    Media Queries Responsive
 ===================== */
 
+/* Desktop grande (≥1025px) */
+
 @media (min-width: 1025px){
   .contenedor-header { margin: 0 150px; }
+
+  /* Portafolio */
+  .grid-portafolio{ grid-template-columns: repeat(4, minmax(240px,1fr)); }
+  .proyecto{ min-height: 190px; max-height: 210px; }
+  .proyecto-media img{ height: 100px; }
 }
 
+
+/* Desktop/tablet (≤1024px) */
 
 @media (max-width: 1024px) {
-  .contenedor-header {
-    margin: 0 50px; /* Reducir márgenes */
-  }
+  .contenedor-header { margin: 0 50px; }
 
-  .logo {
-    bottom: 15px;  /* Ajuste menor */
-    width: 300px;
-  }
+  .logo{ bottom: 15px; width: 300px; }
+  .eslogan{ bottom: 60px; font-size: 0.95rem; text-align: center; }
 
-  .eslogan {
-    bottom: 60px;  /* Separación adecuada del borde azul */
-    font-size: 0.95rem;
-    text-align: center;
-  }
+  /* Portafolio */
+  .grid-portafolio{ grid-template-columns: repeat(2, minmax(240px,1fr)); }
+  .proyecto{ min-height: 190px; max-height: 210px; }
+  .proyecto-media img{ height: 95px; }
 }
 
+/* Tablet / mobile (≤768px) */
+
 @media (max-width: 768px) {
-  html, body { 
-    max-width: 100%; overflow-x: hidden; 
-  }
+  html, body { max-width: 100%; overflow-x: hidden; }
 
-  .contenedor-header {
-    margin: 0 12px;                 
-    padding: .5rem .75rem;          
-    flex-wrap: wrap;
-    gap: .5rem;
-    margin-bottom: 14px;  
-    max-height: 200px;          
+  .contenedor-header{
+    margin: 0 12px; padding:.5rem .75rem; flex-wrap:wrap; gap:.5rem;
+    margin-bottom:14px; max-height:200px;
   }
-
-  .logo-area {
-    flex: 1 1 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo {
-    width: clamp(160px, 45vw, 260px);
-    height: auto;
-    bottom: 0;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .eslogan {
-    position: static !important;    
-    bottom: 0 !important;
-    /* margin-top: 0 auto; */               
-    text-align: center;
-    font-size: .95rem;
-  }
-
-  .menu-container {
-    flex: 1 1 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 20px;
-  }
-
-  .menu-container a { 
-    white-space: nowrap; font-size: .95rem; 
-  }
-
+  .logo-area{ flex:1 1 100%; display:flex; flex-direction:column; align-items:center; }
+  .logo{ width: clamp(160px, 45vw, 260px); height:auto; bottom:0; margin:0 auto; display:block; }
+  .eslogan{ position: static !important; bottom: 0 !important; text-align:center; font-size:.95rem; }
+  .menu-container{ flex:1 1 100%; justify-content:center; flex-wrap:wrap; gap:1rem; margin-top:20px; }
+  .menu-container a{ white-space:nowrap; font-size:.95rem; }
   .hero { padding: 1.5rem 1rem; }
   .hero h1 { font-size: clamp(1.8rem, 9vw, 2.6rem); line-height: 1.15; }
   .hero p  { font-size: clamp(.95rem, 3.6vw, 1.1rem); }
+
+  /* Portafolio */
+  .grid-portafolio{ grid-template-columns: repeat(2, minmax(220px,1fr)); }
+  .proyecto{ min-height: 180px; max-height: 200px; }
+  .proyecto-media img{ height: 90px; }
+  .proyecto h3{ font-size: 1rem; }
+  .proyecto-resumen{ font-size: .85rem; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; }
+  .btn-ver{ padding:.45rem .8rem; font-size:.9rem; }
 }
 
-
-/* SMARTPHONES PEQUEÑOS */
+/* Smartphones pequeños (≤480px) */
 
 @media (max-width: 480px) {
   .contenedor-header{
-    margin: 0 8px;
-    padding: .5rem .6rem;
-    flex-wrap: wrap;
-    gap: .4rem;
-    margin-bottom: 16px;  
-    max-height: 170px;      
+    margin: 0 8px; padding: .5rem .6rem; flex-wrap:wrap; gap:.4rem;
+    margin-bottom:16px; max-height:170px;
   }
-  
-  .logo-area{
-    flex: 1 1 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo{
-    width: clamp(150px, 50vw, 200px);
-    height: auto;
-    bottom: 0;                  
-    margin: 0 auto;
-    display: block;
-  }
-
-  .eslogan{
-    position: static !important; 
-    bottom: auto !important;
-    font-size: .9rem;            
-    line-height: 1.3;
-    margin-top: 12px;            
-    text-align: center;
-  }
-
-  .eslogan .runa{
-    font-family: 'RuneFont', serif;
-    font-size: 1.2rem;           
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  .menu-container{
-    flex: 1 1 100%;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: .75rem;
-  }
-
-  .menu-container a{
-    font-size: .9rem;
-    white-space: nowrap;
-  }
-
+  .logo-area{ flex:1 1 100%; display:flex; flex-direction:column; align-items:center; }
+  .logo{ width: clamp(150px, 50vw, 200px); height:auto; bottom:0; margin:0 auto; display:block; }
+  .eslogan{ position: static !important; bottom:auto !important; font-size:.9rem; line-height:1.3; margin-top:12px; text-align:center; }
+  .eslogan .runa{ font-family:'RuneFont',serif; font-size:1.2rem; display:inline-block; vertical-align:middle; }
+  .menu-container{ flex:1 1 100%; justify-content:center; flex-wrap:wrap; gap:.75rem; }
+  .menu-container a{ font-size:.9rem; white-space:nowrap; }
   html, body{ max-width:100%; overflow-x:hidden; }
+
+  /* Portafolio */
+  .grid-portafolio{ grid-template-columns: 1fr; }
+  .proyecto{ min-height: 170px; max-height: 190px; }
+  .proyecto-media img{ height: 85px; }
 }
 
-/* Móviles en vertical */
-/* @media (max-width: 430px) and (orientation: portrait) {
-  .contenedor-header { 
-    padding-bottom: 14px; 
-  }
-  .eslogan{
-    line-height: 1.5;     
-    margin-bottom: 2px;   
-  }
-}
+/* Mobile portrait (≤430px y vertical) */
 
-@supports (-webkit-touch-callout: none) {
-  .contenedor-header { padding-bottom: 16px; }
-}
- */
-
- /* Mobile portrait: ajusta SOLO el eslogan */
 @media (max-width: 430px) and (orientation: portrait) {
-  .eslogan{
-    display: inline-block;   
-    line-height: 1.35;      
-    margin-bottom: 0;        
-    padding-bottom: 10px;    
-    transform: translateZ(0);
-  }
-  .contenedor-header{
-    padding-bottom: 0;       
-  }
+  .eslogan{ display:inline-block; line-height:1.35; margin-bottom:0; padding-bottom:10px; transform: translateZ(0); }
+  .contenedor-header{ padding-bottom:0; }
+
+  /* Portafolio */
+  .proyecto{ min-height: 165px; }
+  .proyecto-media img{ height: 80px; }
 }
 
+/* iOS/Webkit fixes + extra pequeño */
 
 @supports (-webkit-touch-callout: none) {
-  .eslogan{
-    padding-bottom: 12px;    
-  }
-}
-
-@supports (-webkit-touch-callout: none) {
-  .logo-area,
-  .contenedor-header{
-    display: flow-root;    
-  }
+  .eslogan{ padding-bottom: 12px; }
+  .logo-area, .contenedor-header{ display: flow-root; }
 }
 
 @media (max-width: 380px) {
-  .contenedor-header{
-    max-height: 160px;
+  .contenedor-header{ max-height: 160px; }
+
+  /* Portafolio */
+  .proyecto{ min-height: 160px; }
+  .proyecto-media img{ height: 78px; }
+}
+
+/* ——— Fix: entre 690px y 481px ——— */
+@media (max-width: 690px) and (min-width: 481px) {
+  .proyecto{
+    max-height: none;        /* ← ya no recorta */
+    min-height: 210px;       /* por si la tarjeta queda muy bajita */
+    padding: .9rem;
+  }
+  .proyecto-media img{
+    height: 105px;           /* un poquito más alta para respirar */
+  }
+  .proyecto-resumen{
+    white-space: normal;     /* ← permite que el texto baje a 2 líneas */
   }
 }
+
+/* ——— Fix extra para ≤480px ——— */
+@media (max-width: 480px){
+  .proyecto{
+    max-height: none;        /* sin límite en móvil */
+    min-height: 200px;
+  }
+  .proyecto-media img{ height: 95px; }
+  .proyecto-resumen{ white-space: normal; }
+}
+
+/* Fix global: botón siempre baja al fondo de la tarjeta */
+.proyecto-body{ display:flex; flex-direction:column; flex:1; }
+.btn-ver{ margin-top:auto; } /* empuja el botón hacia abajo */
+
+/* —— Rango desktop medio: 1343px → 1025px —— */
+@media (max-width: 1343px) and (min-width: 1025px){
+  .proyecto{
+    max-height: none;       /* evita el recorte */
+    min-height: 220px;      /* altura cómoda */
+    padding: .9rem;
+  }
+  .proyecto-media img{
+    height: 110px;          /* un pelín más alta para balancear */
+  }
+  .proyecto-resumen{
+    white-space: normal;    /* permite 2 líneas si hace falta */
+  }
+  .btn-ver{
+    font-size: .9rem;
+    padding: .45rem .8rem;
+  }
+}
+
 
 
 

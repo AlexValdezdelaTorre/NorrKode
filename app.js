@@ -72,45 +72,64 @@ function dibujar() {
 }
 
 dibujar();
-/* 
-(function () {
-  const header = document.querySelector('.contenedor-header');
-  const links = document.querySelectorAll('.menu-container a[href^="#"]');
 
-  if (!header || !links.length) return;
 
-  const getOffset = () => (header.offsetHeight || 0) + 12;
-  
-  const extraById = {
-  '#portafolio': 60,  
-  '#servicios': 60
-};
+// === MODAL: abrir/cerrar ===
+document.addEventListener('DOMContentLoaded', () => {
+  const openButtons = document.querySelectorAll('[data-open]');
+  const closeAttr = '[data-close]';
 
-  function scrollWithOffset(hash, push = true) {
-    const el = document.querySelector(hash);
-    if (!el) return;
-    const extra = (hash === '#portafolio' || hash === '#servicios') ? 60 : 0;
-
-const y = el.getBoundingClientRect().top + window.scrollY - (getOffset() + extra);
-    window.scrollTo({ top: y, behavior: 'smooth' });
-    if (push) history.pushState(null, '', hash);
-  }
-
-  // Clicks del menú
-  links.forEach(a => {
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      scrollWithOffset(a.getAttribute('href'));
+  // abrir
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-open');
+      const modal = document.getElementById(id);
+      if (!modal) return;
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open'); // bloquea scroll del fondo
     });
   });
 
-  
-  window.addEventListener('load', () => {
-    if (location.hash) {
-      setTimeout(() => scrollWithOffset(location.hash, false), 0);
+  // cerrar (X o fondo)
+  document.addEventListener('click', (e) => {
+    if (e.target.matches(closeAttr)) {
+      const modal = e.target.closest('.modal');
+      if (!modal) return;
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
     }
   });
-})(); */
+
+  // cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal[aria-hidden="false"]').forEach(m =>
+        m.setAttribute('aria-hidden', 'true')
+      );
+      document.body.classList.remove('modal-open');
+    }
+  });
+});
+
+// === SCROLL con offset del header fijo ===
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.contenedor-header');
+  const getHeaderH = () => header ? header.getBoundingClientRect().height : 0;
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (!id || id === '#') return;
+      const target = document.querySelector(id);
+      if (!target) return;
+
+      e.preventDefault();
+      const y = target.getBoundingClientRect().top + window.pageYOffset - getHeaderH() - 12;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+});
+
 
 
 
