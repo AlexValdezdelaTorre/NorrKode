@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <title>NorrKode</title>
-  <link rel="stylesheet" href="css/styles.css">
-
-</head> -->
-
 <head>
   <!-- Configuración básica -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
   <!-- Título y descripción SEO -->
   <title>NorrKode · Branding, Web & Campañas Digitales</title>
   <meta name="description" content="Impulsamos tu negocio con branding, desarrollo web y campañas digitales. Diagnóstico gratis y estrategias hechas para clientes locales.">
+  <meta name="keywords" content="branding, diseño web, campañas digitales, marketing, Guadalajara, NorrKode">
+  <meta name="author" content="NorrKode · Alejandro & Joana">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://norrkode.netlify.app/">
 
   <!-- Estilos -->
+  <link rel="preload" href="css/styles.css" as="style">
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Iconografía (Font Awesome) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         referrerpolicy="no-referrer" />
@@ -34,7 +33,7 @@
   <meta property="og:site_name" content="NorrKode">
   <meta property="og:title" content="NorrKode · Branding, Web & Campañas Digitales">
   <meta property="og:description" content="Estrategias prácticas para atraer clientes en semanas, no meses.">
-  <meta property="og:url" content="https://norrkode.netlify.app/"> <!-- cambia cuando tengas dominio propio -->
+  <meta property="og:url" content="https://norrkode.netlify.app/">
   <meta property="og:image" content="https://norrkode.netlify.app/assets/og/norrkode-og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -46,9 +45,27 @@
   <meta name="twitter:image" content="https://norrkode.netlify.app/assets/og/norrkode-og.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/img/runas.png" type="image/png"> <!-- temporal -->
-  <!-- 👆 más adelante mejor usar un favicon oficial en 32x32, 192x192 -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+  <link rel="manifest" href="assets/site.webmanifest">
 
+  <!-- Schema.org JSON-LD (SEO Avanzado) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NorrKode",
+    "url": "https://norrkode.netlify.app/",
+    "logo": "https://norrkode.netlify.app/assets/img/runas.png",
+    "sameAs": [
+      "https://www.facebook.com/norrkode",
+      "https://www.instagram.com/norrkode"
+    ],
+    "description": "Agencia digital en Guadalajara: branding, diseño web y campañas digitales."
+  }
+  </script>
+
+  <meta name="google-site-verification" content="bZ_XV1T1VUiqVp_ibuCbfxJBxqJiGXQb_2NP8D0zRNo" />
 </head>
 
 
