@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
+  <!-- Configuración básica -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -101,16 +101,6 @@
     </div>
   </section>
 
-  <!-- Portafolio -->
-  <!-- <section id="portafolio" class="portafolio">
-    <h2>Nuestro Portafolio</h2>
-    <div class="grid-portafolio">
-      <div class="proyecto">Proyecto 1</div>
-      <div class="proyecto">Proyecto 2</div>
-      <div class="proyecto">Proyecto 3</div>
-      <div class="proyecto">Proyecto 4</div>
-    </div>
-  </section> -->
 
 <!-- Portafolio -->
 <section id="portafolio" class="portafolio">
@@ -124,17 +114,34 @@
       </figure>
       <div class="proyecto-body">
         <h3>Reclutamiento de Promotores</h3>
-        <p class="proyecto-resumen">
+        <!-- <p class="proyecto-resumen">
           Guadalajara · Campaña digital · +90 leads · 12 contrataciones &lt; 30 días
-        </p>
+        </p> -->
         <button type="button" class="btn-ver" data-open="modal-caso-1">Ver caso</button>
       </div>
     </article>
 
+    <!-- PROYECTO 2: Caso real -->
+<article class="proyecto">
+  <figure class="proyecto-media">
+  
+    <img src="assets/img/collaje-nails.jpg" 
+         alt="Caso de éxito: lanzamiento digital de Joana Mora Nails Studio (web, branding, redes y Google Business)">
+  </figure>
+  <div class="proyecto-body">
+    <h3>Joana Mora Nails Studio</h3>
+    <!-- <p class="proyecto-resumen">
+      Lanzamiento digital · Web + Branding + Redes · Indexada en Google y Google Maps
+    </p> -->
+    <button type="button" class="btn-ver" data-open="modal-caso-2">Ver caso</button>
+  </div>
+</article>
+
+
     <!-- Placeholders (luego los llenamos) -->
-    <div class="proyecto">
+    <!-- <div class="proyecto">
       <div class="proyecto-body"><h3>Proyecto 2</h3></div>
-    </div>
+    </div> -->
     <div class="proyecto">
       <div class="proyecto-body"><h3>Proyecto 3</h3></div>
     </div>
@@ -176,6 +183,42 @@
   </div>
   
 </div>
+
+<!-- MODAL del Caso 2 -->
+<div id="modal-caso-2" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle2">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-dialog">
+    <button class="modal-close" aria-label="Cerrar" data-close>×</button>
+    <h3 id="modalTitle2">Caso de Éxito: Joana Mora Nails Studio</h3>
+    <p class="modal-sub">Lanzamiento digital integral: web + branding + redes + Google</p>
+
+      <figure class="modal-media">
+      <img src="assets/img/collaje-nails.jpg" width="90%" alt="Collage Joana Mora Nails Studio">
+    </figure>
+
+    <ul class="kpi-list">
+      <li>🌐 <strong>Landing page</strong> responsive con CTA a WhatsApp</li>
+      <li>🎨 <strong>Logotipo</strong> + paleta de colores + tipografía</li>
+      <li>💳 <strong>Tarjetas de presentación</strong> y de fidelidad</li>
+      <li>📱 <strong>Perfiles oficiales</strong> en Facebook e Instagram</li>
+      <li>📍 Alta en <strong>Google Business</strong> con servicios y horarios</li>
+      <li>🔎 <strong>Indexación</strong> confirmada en Google</li>
+    </ul>
+
+    <p class="modal-desc">
+      Construimos desde cero la presencia digital del estudio: identidad visual coherente, 
+      landing optimizada, integración con redes, materiales impresos y ficha en Google para ser encontrable.
+    </p>
+
+    <blockquote class="modal-quote">
+      “Ahora mis clientas me encuentran en Google y redes, y me escriben directo por WhatsApp.”
+      <cite>— Joana Mora</cite>
+    </blockquote>
+
+    <a class="btn-cta" href="#contacto">Quiero mi lanzamiento digital</a>
+  </div>
+</div>
+
 
 
 
